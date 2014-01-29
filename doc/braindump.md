@@ -1,4 +1,29 @@
 
+Usecases
+===========
+* Interactive installation.
+* Ad-hoc home automation
+* Ad-hoc construction machines
+* Environmental monitoring
+* Conducting physics experiments/demonstrations
+* Human interface device for computer
+
+
+Physical requirements
+=======================
+Quite informal specs...
+
+Should be able to:
+* Hold someone standing on it
+* Lie out in the rain for a day
+* Be dropped from 1-2 meter dozens of times
+* Be mounted on vibrating motor/chassis for a day
+
+Size should ideally be 40x40x10mm (or smaller), 50x50x15mm acceptable?
+
+Components
+==============
+
 Sensors
 -----------
 Prices from Farnell for small quantities.
@@ -11,6 +36,7 @@ Prices from Farnell for small quantities.
 * Accelerometer. 1-2 USD
 * Touch. Can be done in uC SW, using a piece of chassis as plates. Dedicated circuit= ? USD
 * Motion. PIR= 5 USD
+* Sound. SPL= ? USD, audio-recording= ?
 * Pressure?
 * Weight?
 
@@ -50,6 +76,7 @@ Microcontroller
 ---------------
 Arduino-compatible is nice. Use an OSHW as base for PCB layout.
 AtMega 32u4 / Leonardo?
+If we want to enable all the sensors above, might need to step up to a ARM Cortex M0+
 
 
 Misc
