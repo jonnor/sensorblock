@@ -19,7 +19,10 @@ Should be able to:
 * Be dropped from 1-2 meter dozens of times
 * Be mounted on vibrating motor/chassis for a day
 
-Size should ideally be 40x40x10mm (or smaller), 50x50x15mm acceptable?
+* Be small enough to put in your trouser pocket
+* Easy to mount on any flat surface, floor, walls, ceiling
+* Be able to disassemble and reassemble with minimal tools in a couple of minutes
+* Have a usable battery lifetime of 30 days
 
 Components
 ==============
@@ -37,14 +40,19 @@ Prices from Farnell for small quantities.
 * Touch. Can be done in uC SW, using a piece of chassis as plates. Dedicated circuit= ? USD
 * Motion. PIR= 5 USD
 * Sound. SPL= ? USD, audio-recording= ?
+* RFID. Tag= 1/2 USD?, reader= ? USD
 * Pressure?
 * Weight?
 
-Radiocomm
+Communication
 -----------
+Devices should be able to communicate directly with eachother, to collaborate as
+equals on tasks. But, it should also be possible for them to take part in a centrally
+controlled network, and act as a slave of a host.
+
 * IR receive. TSOP382/TSOP85/SEN-00241. 1/2 - 2 USD
 * 433Mhz. 
-* 2.4 Ghz. NRF24+, BT classic, BT low-energy
+* 2.4 Ghz. NRF24+, BT classic, BT 4.0/low-energy?
 
 Want to communicate with:
 * Keyboards/mice. 
@@ -82,3 +90,43 @@ If we want to enable all the sensors above, might need to step up to a ARM Corte
 Misc
 -------
 USB connectivity for flashing. Just use PCB directly for this?
+
+
+Software
+=========
+
+Key areas
+* Statistics
+* Visualization
+* Event-detection
+
+Enable
+* Combine data from different sensors, and other data sources
+* Create event triggers from one-or-more conditions on data, both real-time and after-the-fact
+* Viewing multiple data streams
+
+
+Device handover/substitutions
+=============================
+Idea: swapping a Sensorblock should be as simple as changing a lightbulb or battery!
+
+For devices which are in continious operation, but are battery powered - there
+will be at some point be a need to replace it. If battery times are short, which might make
+the system simpler and cheaper, replacements would need to happen fairly often.
+If an existing device could, upon the arrival of a new potential replacement device, hand over
+its job with minimal user involvement - this would perhaps make this acceptable.
+
+Couple with wireless charging of blocks when they are not in use.
+
+There would of course be a need for a device to notify when it is in need of a replacement.
+
+
+Relationship with Arduino-like devices
+===============================
+Arduino provides cheap, standardized microcontroller boards which are programmable
+- but they do not include any sensor or actuator pheriperals, and does not solve any
+of the mechanical challenges faced when making a thing.
+Also, it is conceived as "the" controller of a project, not so much geared towards collaboration in larger systems.
+
+
+
