@@ -1,4 +1,6 @@
 
+
+
 Usecases
 ===========
 * Interactive installation.
@@ -129,4 +131,28 @@ of the mechanical challenges faced when making a thing.
 Also, it is conceived as "the" controller of a project, not so much geared towards collaboration in larger systems.
 
 
+Dogfooding
+============
+Sensorblocks experiments and attempts to develop the idea of 'software-defined electronics'.
+
+* Use noflo-cad for enclosure design
+* Use noflo-eda for electronics design
+* Use microflo for the embedded software
+
+Documentation & Artifacts
+========================
+Needs to cover the entire process of making a Sensorblock.
+
+* Purchase: Bill-of-materials, sourcing info/tips
+* Electronics prod: PCB schematics, layout, milling toolpaths
+* Enclosure prod: CAD files, CNC/3d toolpaths, tips
+* Assembly: instructions
+* Software: Toolchain install, bootloader, firmware install
+* QA: Testing process(es)
+
+Use a build-process, like one would do with software.
+Do continious integration and testing, using Travis CI.
+Do releases with all of the artifacts.
+
+Question: how can we automatically verify non-software components, continiously?
 
