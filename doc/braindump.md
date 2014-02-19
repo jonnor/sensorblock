@@ -43,6 +43,8 @@ Prices from Farnell for small quantities.
 * Motion. PIR= 5 USD
 * Sound. SPL= ? USD, audio-recording= ?
 * RFID. Tag= 1/2 USD?, reader= ? USD
+* Laser. Send/receive
+* Ir/opto trans/recv, for beam crossing/object detection
 * Pressure?
 * Weight?
 
@@ -52,6 +54,7 @@ Devices should be able to communicate directly with eachother, to collaborate as
 equals on tasks. But, it should also be possible for them to take part in a centrally
 controlled network, and act as a slave of a host.
 
+* NFC ?
 * IR receive. TSOP382/TSOP85/SEN-00241. 1/2 - 2 USD
 * 433Mhz. 
 * 2.4 Ghz. NRF24+, BT classic, BT 4.0/low-energy?
