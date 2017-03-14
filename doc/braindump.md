@@ -41,9 +41,14 @@ Prices from Farnell for small quantities.
 * Temperature. 1/2 - 1 USD.
 * Moisture. 1-4 USD
 * Proximity. Hall effect sensor=1/3 USD, switch= 1 USD.
-* Distance. Ultrasound = 3-5USD. IR=10 USD?
+* Distance. Ultrasound = 1-2USD. IR=6 USD?
+[Sharp IR distance](http://www.banggood.com/3pcs-IR-Infrared-Ranging-Sensor-Distance-Detector-20-150CM-With-Matching-Cable-p-1123630.html?rmmds=search).
 * Light. Ambient. 1 USD.
 * Accelerometer. 1-2 USD
+* Gyro.
+* IMU. 6DOF=accel+gyro. 9DOF=accel+gyro+magnetometer. 10DOF=+bariometer. MPU-9250,
+[MPU-9250 breakout](http://www.banggood.com/GY-9250-MPU-9250-Module-9-Axis-Sensor-Module-I2C-SPI-Communication-p-1059005.html?rmmds=search)
+[Adafruit 9DOF](https://www.adafruit.com/products/3387)
 * Touch. Can be done in uC SW, using a piece of chassis as plates. Dedicated circuit= ? USD
 * Motion. PIR= 5 USD
 * Sound. SPL= ? USD, audio-recording= ?
@@ -92,14 +97,21 @@ Communicate with existing systems to actuate?
 
 Microcontroller
 ---------------
-Arduino-compatible is nice. Use an OSHW as base for PCB layout.
-AtMega 32u4 / Leonardo?
-If we want to enable all the sensors above, might need to step up to a ARM Cortex M0+
+Arduino-compatible is very nice to have. 
+Integrated connectivity preferred, like WiFi or BT.
 
+The ESP8266 or ESP32.
+Adafruit makes a nice board which integrates USB+LiPo power,
+the [Feather Huzzah ESP8266](https://learn.adafruit.com/adafruit-feather-huzzah-esp8266).
+
+In the same "Feather" series, they also have microcontrollers with LoRa, Bluetooth LE and GSM connectivity.
+They have a "FeatherWing" extension board concept.
+Could be a good first target to create a compatible board.
 
 Misc
 -------
-USB connectivity for flashing. Just use PCB directly for this?
+USB connectivity for flashing. MicroUSB is the standard.
+Just use PCB directly for this?
 
 
 Software
