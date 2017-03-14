@@ -1,6 +1,4 @@
 
-
-
 Usecases
 ===========
 * Interactive installation.
@@ -9,7 +7,6 @@ Usecases
 * Environmental monitoring
 * Conducting physics experiments/demonstrations
 * Human interface device for computer
-
 
 Physical requirements
 =======================
@@ -25,6 +22,14 @@ Should be able to:
 * Easy to mount on any flat surface, floor, walls, ceiling
 * Be able to disassemble and reassemble with minimal tools in a couple of minutes
 * Have a usable battery lifetime of 30 days
+
+Similar devices
+==============
+
+* [Bosch XDK](https://xdk.bosch-connectivity.com).
+8 different sensors, mostly environmental.
+WiFi+BT connectivity. Integrated battery.
+Cost: 180 EUR/unit.
 
 Components
 ==============
