@@ -60,21 +60,32 @@ Prices from Farnell for small quantities.
 
 Communication
 -----------
-Devices should be able to communicate directly with eachother, to collaborate as
-equals on tasks. But, it should also be possible for them to take part in a centrally
-controlled network, and act as a slave of a host.
+the Sensorblock primarily act as a pure sensors device, that is it:
+senses and transmits the information to a central message broker (MQTT).
 
-* NFC ?
+Application/business logic should subscribe to the messages at the broker,
+process, store, and make the decisions.
+
+These can then be sent to actuators, either:
+* over the same message broker,
+* via a gateway device,
+* or another protocol
+
+Gateway device(s) can enable the
+
 * IR receive. TSOP382/TSOP85/SEN-00241. 1/2 - 2 USD
 * 433Mhz. 
-* 2.4 Ghz. NRF24+, BT classic, BT 4.0/low-energy?
+* 2.4 Ghz. NRF24+, BT, BTLE4.0
 
 Want to communicate with:
-* Keyboards/mice. 
-* Weather stations, alarm clocks.
-* TV/HiFi remotes
-* Systems sending RTC
-* Home-electronics switches
+
+* Weather stations, alarm clocks. 433Mhz
+* TV/HiFi remotes. IR
+* Keyboards/mice. USB/BT
+* Systems sending RTC. 433Mhz? LF?
+* Home-electronics switches. 433Mhz
+
+This should be done preferably with standalone MsgFlo participant
 
 Battery
 -----------
@@ -88,19 +99,11 @@ Storage
 X GB microSD = 4-5USD. Holder = 1-2USD…
 
 
-Actuators
------------
-Actuation is almost by necessity specific to the device one wants to control..
-And will in most cases require physical contact, challenging to weather proof.
-Communicate with existing systems to actuate?
-
-
 Microcontroller
 ---------------
 Arduino-compatible is very nice to have. 
 Integrated connectivity preferred, like WiFi or BT.
 
-The ESP8266 or ESP32.
 Adafruit makes a nice board which integrates USB+LiPo power,
 the [Feather Huzzah ESP8266](https://learn.adafruit.com/adafruit-feather-huzzah-esp8266).
 
@@ -108,14 +111,50 @@ In the same "Feather" series, they also have microcontrollers with LoRa, Bluetoo
 They have a "FeatherWing" extension board concept.
 Could be a good first target to create a compatible board.
 
+WiFi-capable
+
+* ESP8266. Really cheap, widely available
+* ESP32. WiFi+BLE4.0. Powerful, nice pheripherals (captouch,hallsense,analogamps)
+* [EMW3165](https://www.seeedstudio.com/EMW3165-Cortex-M4-based-WiFi-SoC-Module-p-2488.html)
+* [RTL8710](https://www.banggood.com/search/rtl8710.html)
+
 Misc
 -------
-USB connectivity for flashing. MicroUSB is the standard.
-Just use PCB directly for this?
+USB connectivity for flashing/charging. MicroUSB is the standard.
+Alt lowcost, use PCB directly to make dongle? Impractical in that a connector has to stick out.
 
 
-Software
-=========
+# First-run experience
+
+Preconfigured to talk to a cloud-hosted MQTT broker.
+Have to input connection details so it can get online.
+Includes a Flowhub IoT basic/trial subscription.
+Click live-URL to connects to a hosted MsgFlo instance for that broker.
+Can see sensor data, add adapters, send data back to device.
+Some example flows should be ready, just plug in to see demo.
+
+# Firmware
+
+Implemented with MicroFlo, components/graphs doing the configurable sensor processing. 
+In advanced mode, allows uploading new/custom graphs.
+
+Sensor processing params should be adjustable over MQTT (in additon to webui).
+
+## Webinterface
+
+Webinterface allows configuring:
+1) Connection details. WiFi SSID/password/mode, MQTT server/username/password/certs, Flowhub IDE url
+2) Parameters for the on-edge algorithms. Readout-rate, filter frequencies, trigger thresholds, ...
+3) If a kit/extensible, pin mappings for added hardware
+
+Button needed to enter/enable editing-mode?
+At least for critical things like connection info.
+Can also enable full reflashing (OTA/USB).
+Physical security...
+
+Firmware should be based on MicroFlo. 
+
+# Tooling
 
 Key areas
 * Statistics
@@ -124,7 +163,7 @@ Key areas
 
 Enable
 * Combine data from different sensors, and other data sources
-* Create event triggers from one-or-more conditions on data, both real-time and after-the-fact
+* Create event triggers from one-or-more conditions on data
 * Viewing multiple data streams
 
 
@@ -150,14 +189,6 @@ Arduino provides cheap, standardized microcontroller boards which are programmab
 of the mechanical challenges faced when making a thing.
 Also, it is conceived as "the" controller of a project, not so much geared towards collaboration in larger systems.
 
-
-Dogfooding
-============
-Sensorblocks experiments and attempts to develop the idea of 'software-defined electronics'.
-
-* Use noflo-cad for enclosure design
-* Use noflo-eda for electronics design
-* Use microflo for the embedded software
 
 Documentation & Artifacts
 ========================
