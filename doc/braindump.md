@@ -31,6 +31,19 @@ Similar devices
 WiFi+BT connectivity. Integrated battery.
 Cost: 180 EUR/unit.
 
+* [z2amiller/sensorboard](https://github.com/z2amiller/sensorboard).
+ESP8266 with various environmental sensors, available via OSHPark.
+
+* [CMU Synthetic Sensor](https://www.cmu.edu/news/stories/archives/2017/may/internet-of-things-sensors.html).
+[Website](http://www.gierad.com/projects/supersensor/).
+Concept of integrated sensor-package, analyzed together using machine learning to detect events in a household,
+one sensor covering one room.
+"high-speed sensing is a big win for instantaneous environmental events"
+"programming by demonstration." for end-user programming.
+
+* [STM32 SensorTile](https://hackaday.io/project/19649-stm32l4-sensor-tile).
+Very low power design, 1mA average. Bluetooth LE via external chip.
+
 Components
 ==============
 
@@ -92,6 +105,17 @@ Battery
 LiPoly probably. Standard JST connector.
 Built-in charging, via USB?
 Wireless charging? QI-standard
+
+Maybe skip internal battery in first version, instead allow USB battery to be used when needed.
+And have a wide-range input power connector, 5-19V. Barrel jack
+
+## Actuators
+
+2-3 general-purposw power-outputs using H-bridges?
+Can then be used for driving motors, speakers, solenoid/relays.
+
+[H-bridge driver ICs](http://no.farnell.com/w/c/semiconductors-ics/power-management-ics-pmic/drivers-controllers/mosfet-drivers?driver-configuration=3-phase-bridge|full-bridge|half-bridge|half-bridgefull-bridge&range=exc-obs|inc-in-stock|exc-direct-ship&sort=P_PRICE)
+
 
 Storage
 -----------
